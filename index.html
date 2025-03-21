@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomenclator Produse</title>
+    <title>Product registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>Nomenclator Produse</h2>
+        <h2>Product registration</h2>
         <form id="productForm">
-            <label for="code">Cod produs (max 10 caractere)</label>
+            <label for="code">Product code (max 10 letters and numbers)</label>
             <input type="text" id="code" maxlength="10" required>
         
-            <label for="name">Denumire produs</label>
+            <label for="name">Product name</label>
             <input type="text" id="name" required>
         
-            <label for="category">Categorie</label>
+            <label for="category">Category</label>
             <input list="categoryList" id="category" required>
             <datalist id="categoryList"></datalist>
         
-            <button type="submit">Adaugă produs</button>
-            <button type="button" id="exportBtn">Exportă CSV</button>
+            <button type="submit">Add product</button>
+            <button type="button" id="exportBtn">Export as CSV</button>
         </form>
         
     </div>
@@ -29,9 +29,9 @@
     <table>
         <thead>
             <tr>
-                <th>Cod produs</th>
-                <th>Denumire</th>
-                <th>Categorie</th>
+                <th>Product code</th>
+                <th>Product name</th>
+                <th>Category</th>
             </tr>
         </thead>
         <tbody id="productTable"></tbody>
