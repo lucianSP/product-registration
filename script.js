@@ -15,7 +15,7 @@ form.addEventListener('submit', function (e) {
     const category = document.getElementById('category').value.trim();
 
     if (code.length > 10) {
-        alert("Codul produsului nu poate avea mai mult de 10 caractere.");
+        alert("Max 10 characters.");
         codeInput.focus();
         return;
     }
@@ -51,16 +51,16 @@ function addCategory(category) {
 
 exportBtn.addEventListener('click', function () {
     if (products.length === 0) {
-        alert("Nu există produse de exportat.");
+        alert("No products list for export.");
         return;
     }
 
-    const csvHeader = "Cod produs,Denumire,Categorie\n";
+    const csvHeader = "Product code,Product name,Category\n";
     const csvRows = products.map(p => `"${p.code}","${p.name}","${p.category}"`);
     const csv = csvHeader + csvRows.join("\n");
 
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-    const fileName = `nomenclator_produse_${new Date().toISOString().slice(0, 10)}.csv`;
+    const fileName = `product_nomenclature_${new Date().toISOString().slice(0, 10)}.csv`;
 
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -69,4 +69,5 @@ exportBtn.addEventListener('click', function () {
     link.click();
     document.body.removeChild(link);
 });
+
 
