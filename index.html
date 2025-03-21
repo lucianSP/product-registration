@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomenclator Produse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Nomenclator Produse</h2>
+        <form id="productForm">
+            <label for="code">Cod produs (max 10 caractere)</label>
+            <input type="text" id="code" maxlength="10" required>
+        
+            <label for="name">Denumire produs</label>
+            <input type="text" id="name" required>
+        
+            <label for="category">Categorie</label>
+            <input list="categoryList" id="category" required>
+            <datalist id="categoryList"></datalist>
+        
+            <button type="submit">Adaugă produs</button>
+            <button type="button" id="exportBtn">Exportă CSV</button>
+        </form>
+        
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cod produs</th>
+                <th>Denumire</th>
+                <th>Categorie</th>
+            </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
